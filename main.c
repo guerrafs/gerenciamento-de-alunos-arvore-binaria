@@ -25,7 +25,7 @@ void Menu(void)
 
 No *criar_no(int RA, int idade, float notas[], char nome[])
 {
-    No *novo_no = malloc(sizeof(No));
+    No *novo_no = calloc(sizeof(No));
     if (novo_no == NULL)
     {
         printf("Erro ao alocar memoria.\n");
@@ -223,6 +223,8 @@ int main()
             break;
         }
     } while (opcao != 0);
-
+    
+    apagar_arvore(raiz);
+    
     return 0;
 }
